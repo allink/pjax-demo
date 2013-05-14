@@ -1,0 +1,8 @@
+.DS_Store
+/env
+/media
+/static
+/webstats
+*.pyc
+*.sqlite
+*.mo
