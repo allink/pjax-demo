@@ -1,0 +1,186 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+body {
+    min-height: 100%;
+    display: table;
+    position: relative;
+    margin: 0;
+    font-family: Arial;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+p {
+    margin: 10px 0;
+}
+h1 {
+    font-size: 30px;
+    margin: 10px 0;
+}
+h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+h3 {
+    font-size: 14px;
+    margin: 10px 0;
+}
+.left {
+    float: left;
+}
+a.active{
+    border-bottom: 2px solid;
+}
+
+/* Layout */
+
+.center {
+    width: 780px;
+    margin: 0 auto;
+}
+.right {
+    float: right;
+}
+
+header {
+    color: white;
+    background-color: black;
+    position: relative;
+    z-index: 20;
+    a {
+        color: white;
+    }
+    nav > ul {
+        overflow: hidden;
+        padding: 10px 0; 
+        > li {
+            float: left;
+            color: white;
+            text-transform: uppercase;
+            margin-left: 30px;
+        }
+    }
+}
+
+main {
+    display: block;
+    padding: 20px 0;
+    > .content {
+        position: relative;
+        .center;
+    }
+}
+.page{
+    width: 75%;
+    float:left;
+}
+.sidebar{
+    width: 25%;
+    margin: 0 0 auto auto;
+}
+
+
+
+/* Animation */
+
+@-webkit-keyframes rota {
+    to { -webkit-transform: rotate(360deg); }
+}
+
+.anim {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    font-size: 600px; /* 1em */
+    margin-left: -0.5em;
+}
+.anim .circles {
+    /* Size and position */
+    width: 1em;
+    height: 1em;
+    margin: 100px auto;
+    position: relative;
+ 
+    /* Styles */
+    list-style: none;
+    border-radius: 50%;
+    border: .01em solid rgba(150,150,150,0.1); /* Subtle white line circling the dots */
+}
+.anim .circles li {
+    width: .2em;
+    height: .2em;
+    position: absolute;
+    border-radius: 50%;
+opacity: 0.5;
+    div {
+        background: url(../images/allink_white.png) no-repeat;
+        background-size: 80% auto;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        -webkit-animation: rota 12s linear infinite reverse;
+    }
+}
+.anim .circles li:nth-child(1) {
+    background: rgb(255,120,0);
+    top: 0;
+    left: 50%;
+    width: 0.15em;
+    height: 0.15em;
+    margin-left: -.075em; /* Width/2 */
+    -webkit-transform-origin: 50% 0.5em;
+    -webkit-animation:  rota 9s linear infinite, opa 3.67s ease-in-out infinite alternate;
+    div {
+        -webkit-animation-duration:9*0.15+0s;
+    }
+}
+ 
+.anim .circles li:nth-child(2) {
+    background: #FF003C;
+    top: 50%; 
+    right: 0;
+    margin-top: -.1em; /* Height/2 */
+    -webkit-transform-origin: -150% 50%;
+    -webkit-animation:  rota 12s linear infinite, opa 4.29s ease-in-out infinite alternate;
+    div {
+        -webkit-animation-duration:12*0.2+0s;
+    }
+}
+ 
+.anim .circles li:nth-child(3) {
+    background: #FABE28; /* Yellow */
+    background: rgb(250, 250, 40); /* Yellow */
+    width: 0.25em;
+    height: 0.25em;
+    bottom: 0;
+    left: 50%; 
+    margin-left: -.125em; /* Width/2 */
+    -webkit-transform-origin: 50% -0.25em;
+    -webkit-animation:  rota 16s linear infinite, opa 5.12s ease-in-out infinite alternate;
+    div {
+        -webkit-animation-duration:16*0.25+0s;
+    }
+}
+ 
+.anim .circles li:nth-child(4) {
+    background: rgb(40, 250, 48); /* Green */
+    width: 0.3em;
+    height: 0.3em;
+    top: 50%; 
+    left: 0;
+    margin-top: -.15em; /* Height/2 */
+    -webkit-transform-origin: 250% 50%;
+    -webkit-transform-origin: 0.5em 50%;
+    -webkit-animation:  rota 21s linear infinite, opa 5.25s ease-in-out infinite alternate;
+    div {
+        -webkit-animation-duration:21*0.3+0s;
+    }
+}
