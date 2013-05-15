@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load feincms_tags feincms_page_tags %}
+
+{% block title %}{{feincms_page.title}} | pjax demo{% endblock title %}
+
+{% block navigation %}
+	{% feincms_navigation of feincms_page as toplevel %}
+	{% for p in toplevel %}
+		<li><a href="{{p.get_absolute_url}}"{% if p|is_equal_or_parent_of:feincms_page %} class="active"{% endif %}>{{ p.title }}</a></li>
+	{% endfor %}
+{% endblock navigation %}
+
+{% block page %}
+	<h2>{{feincms_page.title}}</h2>
+	{% feincms_render_region feincms_page "main" request %}
+{% endblock page %}
+
+{% block sidebar %}
+	{% feincms_render_region feincms_page "sidebar" request %}
+{% endblock sidebar %}
