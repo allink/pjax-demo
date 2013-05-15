@@ -100,6 +100,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'pjax_demo.middleware.PJAXMiddleware',
 )
 
 ROOT_URLCONF = 'pjax_demo.urls'

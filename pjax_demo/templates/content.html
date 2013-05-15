@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends request|pjax:"base.html" %}
 {% load feincms_tags feincms_page_tags %}
 
 {% block title %}{{feincms_page.title}} | pjax demo{% endblock title %}

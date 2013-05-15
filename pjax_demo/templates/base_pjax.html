@@ -1,0 +1,7 @@
+{ "url":{{ request.build_absolute_uri|jsonify }},
+"blocks": {
+"title": {% filter jsonify %}{% block title %}{% endblock %}{% endfilter %},
+"page_content": {% filter jsonify %}{% block page %}{% endblock %}{% endfilter %},
+"sidebar_content": {% filter jsonify %}{% block sidebar %}{% endblock %}{% endfilter %},
+"navigation": {% filter jsonify %}{% block navigation %}{% endblock %}{% endfilter %},
+"sentinel": ""}}
